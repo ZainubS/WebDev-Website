@@ -1,0 +1,175 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap");
+
+/* Define color variables */
+:root {
+  --navbar-footer-color: #7b9c8c; /* header & footer background */
+  --bubble-color: #d8efd3; /* About Me bubble */
+  --body-bg-color: #f1f8e8; /* whole page background */
+  --text-color: #1a1a1a; /* main text */
+  --bubble-shadow: rgba(0, 0, 0, 0.3); /* shadow color */
+  --hover-highlight: rgba(255, 255, 255, 0.2); /* nav link hover */
+}
+
+/* Header & Navbar */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--navbar-footer-color);
+  color: white;
+  padding: 1rem 2rem;
+}
+
+header h1 {
+  margin: 0;
+  font-family: "Poppins", "Nunito", sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+  color: white;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  font-family: "Poppins", "Nunito", sans-serif;
+  padding: 1.5rem 3rem;
+  border-radius: 5px;
+}
+
+nav ul li a:hover {
+  background-color: var(--hover-highlight);
+}
+
+/* Profile Picture */
+.profile-picture {
+  border-radius: 50%;
+  width: 310px;
+  height: 310px;
+  object-fit: cover;
+  box-shadow: 0 6px 12px var(--bubble-shadow);
+  border: 3px solid #fff;
+}
+
+/* About Section */
+.section-about-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem; /* normal spacing */
+  flex-wrap: wrap;
+  min-height: 70vh; /* gives space to center */
+}
+
+.about-text-box {
+  background-color: var(--bubble-color);
+  padding: 1.5rem;
+  border-radius: 20px;
+  max-width: 600px;
+  position: relative;
+  text-align: left;
+
+  /* Use border instead of outline */
+  border: 3px solid var(--bubble-shadow);
+}
+
+/* Triangle outline (behind) */
+.about-text-box::before {
+  content: "";
+  position: absolute;
+  top: 75%;
+  right: -36px; /* matches triangle size + border */
+  width: 0;
+  height: 0;
+  border-top: 26px solid transparent;
+  border-bottom: 26px solid transparent;
+  border-left: 36px solid var(--bubble-shadow); /* matches box border color */
+  transform: translateY(-50%);
+}
+
+/* Triangle fill */
+.about-text-box::after {
+  content: "";
+  position: absolute;
+  top: 75%;
+  right: -32px; /* slightly inside outline */
+  width: 0;
+  height: 0;
+  border-top: 23px solid transparent;
+  border-bottom: 23px solid transparent;
+  border-left: 33px solid var(--bubble-color); /* matches box background */
+  transform: translateY(-50%);
+}
+
+/* Responsive: stack text above image */
+@media (max-width: 600px) {
+  .section-about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text-box {
+    max-width: 90%;
+  }
+}
+
+/* Page Layout */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  background-image: url("img/background_pattern.png");
+  background-size: cover; /* fills viewport */
+}
+
+main {
+  flex: 1;
+}
+
+/* Footer */
+.footer {
+  width: 100%;
+  background-color: var(--navbar-footer-color);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  box-sizing: border-box;
+  font-size: 20px;
+  font-family: "Poppins", "Nunito", sans-serif;
+}
+
+/* About Me Heading */
+.about-name {
+  font-family: "Poppins", "Nunito", sans-serif;
+  font-weight: 700;
+  font-size: 2.3rem;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+.about-me {
+  font-family: "Poppins", "Nunito", sans-serif;
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: var(--text-color);
+}
+
+.bubble-cat {
+  position: absolute;
+  width: 150px; /* size of cat */
+  top: -115px; /* lifts cat above bubble */
+  right: 30px; /* horizontal placement */
+}
