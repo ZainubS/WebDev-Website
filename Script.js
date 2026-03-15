@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const email = document.getElementById("email").value;
     const message = document.getElementById("message").value;
 
-    if (name === "" || email === "" || message === "") {
+    if (name.trim() === "" || email.trim() === "" || message.trim() === "") {
       response.textContent = "Please fill out all fields.";
       response.style.color = "darkred";
       return;

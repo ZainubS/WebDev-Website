@@ -325,7 +325,7 @@ main {
 
 /* message box */
 .form-group textarea {
-  height: 140px; /* increase this for a bigger box */
+  height: 140px; /* increase this for a bigger box ! */
   resize: none; /* disable dragging */
 }
 
