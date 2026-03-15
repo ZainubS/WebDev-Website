@@ -139,6 +139,9 @@ body {
   margin: 0;
   background-image: url("img/background_pattern.png");
   background-size: cover; /* fills viewport */
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* THIS makes the background fixed in place */
+  background-position: center center;
 }
 
 main {
@@ -180,10 +183,15 @@ main {
   right: 30px; /* horizontal placement */
 }
 
-/* Projects Styles / Bootstrap */
+/* --- My Projects Page & Bootstrap Accordian --- */
 .projects-title {
   font-family: var(--font-family-primary);
   text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  color: rgb(255, 255, 255); /* fill color */
+  -webkit-text-stroke: 1px black; /* outline thickness and color */
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4); /* optional shadow */
 }
 
 .accordion-header {
@@ -196,6 +204,7 @@ main {
   font-weight: 400;
   font-size: 1.1rem; /* slightly bigger text for body */
   padding: 1.2rem 1.5rem; /* bigger body padding */
+  line-height: 1.6;
 }
 
 .accordion-button {
@@ -218,4 +227,39 @@ main {
   border-radius: 12px;
   margin-bottom: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project-container {
+  width: 300px; /* keeps the same width */
+  text-align: left; /* aligns content to left */
+  margin: 0; /* remove auto centering */
+}
+
+.robosnake-image {
+  max-width: 100%; /* scales with container */
+  height: auto;
+}
+
+.github-button {
+  margin-top: 0; /* adds space above the button */
+}
+
+.project-github-btn {
+  display: inline-block; /* ensures padding works well */
+  margin-top: 1rem; /* spacing above button */
+  font-family: var(--font-family-primary);
+  font-size: 1.3rem; /* bigger text */
+  padding: 0.75rem 1.5rem; /* vertical & horizontal padding */
+  background-color: var(--navbar-footer-color);
+  color: white;
+  border: none;
+  border-radius: 6px; /* optional rounded corners */
+  text-decoration: none;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+
+.project-github-btn:hover {
+  background-color: var(--hover-highlight);
 }
