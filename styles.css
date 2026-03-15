@@ -4,7 +4,8 @@
 /* Define color variables */
 :root {
   --navbar-footer-color: #7b9c8c; /* header & footer background */
-  --bubble-color: #d8efd3; /* About Me bubble */
+  --light-green: #d8efd3;
+  --slightly-darker-green: #bdd3b7;
   --body-bg-color: #f1f8e8; /* whole page background */
   --text-color: #1a1a1a; /* main text */
   --bubble-shadow: rgba(0, 0, 0, 0.3); /* shadow color */
@@ -79,7 +80,7 @@ nav ul li a:hover {
 }
 
 .about-text-box {
-  background-color: var(--bubble-color);
+  background-color: var(--light-green);
   padding: 1.5rem;
   border-radius: 20px;
   max-width: 600px;
@@ -114,7 +115,7 @@ nav ul li a:hover {
   height: 0;
   border-top: 23px solid transparent;
   border-bottom: 23px solid transparent;
-  border-left: 33px solid var(--bubble-color); /* matches box background */
+  border-left: 33px solid var(--light-green); /* matches box background */
   transform: translateY(-50%);
 }
 
@@ -177,4 +178,44 @@ main {
   width: 150px; /* size of cat */
   top: -115px; /* lifts cat above bubble */
   right: 30px; /* horizontal placement */
+}
+
+/* Projects Styles / Bootstrap */
+.projects-title {
+  font-family: var(--font-family-primary);
+  text-align: center;
+}
+
+.accordion-header {
+  font-family: var(--font-family-primary);
+  font-weight: 600;
+}
+
+.accordion-body {
+  font-family: var(--font-family-primary);
+  font-weight: 400;
+  font-size: 1.1rem; /* slightly bigger text for body */
+  padding: 1.2rem 1.5rem; /* bigger body padding */
+}
+
+.accordion-button {
+  background-color: var(--light-green); /* normal background */
+  font-size: 1.2rem; /* bigger text */
+  padding: 1.2rem 1.5rem; /* top/bottom, left/right padding */
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: var(--light-green); /* color when open */
+  color: #000;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+}
+
+.accordion-item {
+  border: 2px solid var(--bubble-shadow);
+  border-radius: 12px;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
