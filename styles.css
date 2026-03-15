@@ -137,7 +137,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   margin: 0;
-  background-image: url("img/background_pattern.png");
+  background-image: url("img/background-img.png");
   background-size: cover; /* fills viewport */
   background-repeat: no-repeat;
   background-attachment: fixed; /* THIS makes the background fixed in place */
@@ -154,7 +154,7 @@ main {
   background-color: var(--navbar-footer-color);
   color: white;
   text-align: center;
-  padding: 1rem;
+  padding: 1.7rem 1rem; /* top/bottom left/right */
   box-sizing: border-box;
   font-size: 20px;
   font-family: var(--font-family-primary);
@@ -261,5 +261,87 @@ main {
 }
 
 .project-github-btn:hover {
+  background-color: var(--hover-highlight);
+}
+
+/***** Contact Form Styles *****/
+.contact-section {
+  min-height: calc(100vh - 160px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-section h2 {
+  font-family: var(--font-family-primary);
+  font-size: 2rem;
+  margin-bottom: 0.3rem;
+}
+
+.contact-section p {
+  font-family: var(--font-family-primary);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.contact-card {
+  background-color: var(--light-green);
+  border-radius: 20px;
+  padding: 1.5rem 1.5rem;
+  width: 100%;
+  max-width: 440px;
+  border: 3px solid var(--bubble-shadow);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+#contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.form-group label {
+  font-family: var(--font-family-primary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 0.45rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-family: var(--font-family-primary);
+  font-size: 0.9rem;
+}
+
+/* message box */
+.form-group textarea {
+  height: 140px; /* increase this for a bigger box */
+  resize: none; /* disable dragging */
+}
+
+.contact-button {
+  margin-top: 0.6rem;
+  padding: 0.6rem;
+  font-size: 1rem;
+  font-family: var(--font-family-primary);
+  background-color: var(--navbar-footer-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-button:hover {
   background-color: var(--hover-highlight);
 }
