@@ -15,6 +15,14 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
+    // Email format check
+    const emailPattern = /^[a-zA-Z0–9._%+-]+@[a-zA-Z0–9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailPattern.test(email)) {
+      response.textContent = "Please enter a valid email address.";
+      response.style.color = "darkred";
+      return;
+    }
+
     console.log("Form submitted:", { name, email, message });
     response.textContent = "Thank you! Your message has been received.";
     response.style.color = "darkgreen";
