@@ -1,10 +1,11 @@
+/* Import Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap");
 
 /* Define color variables */
 :root {
   --navbar-footer-color: #7b9c8c; /* header & footer background */
-  --light-green: #d8efd3;
+  --light-green: rgb(215, 239, 210);
   --slightly-darker-green: #bdd3b7;
   --body-bg-color: #f1f8e8; /* whole page background */
   --text-color: #1a1a1a; /* main text */
@@ -139,9 +140,9 @@ body {
   min-height: 100vh;
   margin: 0;
   background-image: url("img/background-img.png");
-  background-size: cover; /* fills viewport */
+  background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* THIS makes the background fixed in place */
+  background-attachment: fixed; /* make the background fixed in place */
   background-position: center center;
 }
 
@@ -182,17 +183,18 @@ main {
   width: 150px; /* size of cat */
   top: -115px; /* lifts cat above bubble */
   right: 30px; /* horizontal placement */
+  pointer-events: none;
 }
 
-/* --- My Projects Page & Bootstrap Accordian --- */
+/* My Projects Page & Bootstrap Accordian */
 .projects-title {
   font-family: var(--font-family-primary);
   text-align: center;
   margin-bottom: 2rem;
   font-weight: 600;
-  color: rgb(255, 255, 255); /* fill color */
-  -webkit-text-stroke: 1px black; /* outline thickness and color */
-  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4); /* optional shadow */
+  color: rgb(255, 255, 255);
+  -webkit-text-stroke: 1px black;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
 }
 
 .accordion-header {
@@ -203,13 +205,13 @@ main {
 .accordion-body {
   font-family: var(--font-family-primary);
   font-weight: 400;
-  font-size: 1.1rem; /* slightly bigger text for body */
-  padding: 1.2rem 1.5rem; /* bigger body padding */
+  font-size: 1.1rem; /* text size for body */
+  padding: 1.2rem 1.5rem; /* body padding */
   line-height: 1.6;
 }
 
 .accordion-button {
-  background-color: var(--light-green); /* normal background */
+  background-color: var(--light-green);
   font-size: 1.2rem; /* bigger text */
   padding: 1.2rem 1.5rem; /* top/bottom, left/right padding */
 }
@@ -231,18 +233,19 @@ main {
 }
 
 .project-container {
-  width: 300px; /* keeps the same width */
   text-align: left; /* aligns content to left */
   margin: 0; /* remove auto centering */
+  width: 100%;
+  max-width: 300px;
 }
 
 .robosnake-image {
-  max-width: 100%; /* scales with container */
+  max-width: 100%;
   height: auto;
 }
 
 .github-button {
-  margin-top: 0; /* adds space above the button */
+  margin-top: 0;
 }
 
 .project-github-btn {
@@ -265,7 +268,7 @@ main {
   background-color: var(--hover-highlight);
 }
 
-/***** Contact Form Styles *****/
+/* Contact Form Styles */
 .contact-section {
   min-height: calc(100vh - 160px);
   display: flex;
@@ -365,8 +368,9 @@ main {
   padding: 1.5rem 2.5rem;
   border: 3px solid var(--bubble-shadow);
   border-radius: 14px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  background-color: var(--light-green);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  background-color: rgba(215, 239, 210, 0.8);
+  backdrop-filter: blur(6px); /* soft blur behind card */
 }
 
 .work-card section {
@@ -383,4 +387,192 @@ main {
 
 .work-card ul {
   padding-left: 1.2rem;
+}
+
+/****************************************/
+/* MEDIA QUERIES FOR DEVICE SIZES */
+/****************************************/
+
+/* hamburger icon */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.5em 1em;
+}
+
+/***** Mobile *****/
+@media (max-width: 768px) {
+  header {
+    flex-direction: row; /* keep items in a row */
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  nav ul {
+    justify-content: center;
+  }
+
+  nav ul li a {
+    font-size: 1rem;
+    padding: 0.5rem 0.8rem;
+  }
+
+  /* about me page */
+  .section-about-container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .profile-picture {
+    width: 220px;
+    height: 220px;
+  }
+
+  .about-name {
+    font-size: 1.8rem;
+  }
+
+  .about-me {
+    font-size: 1rem;
+  }
+
+  .bubble-cat {
+    width: 100px;
+    top: -80px;
+  }
+
+  /* previous work page */
+  .work-card {
+    padding: 1rem 1.2rem;
+  }
+
+  .work-card h2 {
+    font-size: 1.5rem;
+  }
+
+  .work-card h3 {
+    font-size: 1.1rem;
+  }
+
+  /* projects page */
+  .accordion-button {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+
+  .accordion-body {
+    font-size: 1rem;
+  }
+
+  .projects-title {
+    font-size: 1.8rem;
+  }
+
+  /* contact page */
+  .contact-card {
+    width: 90%;
+    padding: 1.2rem;
+  }
+
+  .contact-section h2 {
+    font-size: 1.7rem;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column; /* stack vertically */
+    align-items: flex-start; /* align links left */
+    width: 100%;
+  }
+
+  nav ul li {
+    width: 100%;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+}
+
+/***** Tablet / small laptops *****/
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Nav links */
+  nav ul li a {
+    font-size: 1.2rem;
+    padding: 0.6rem 1rem;
+  }
+
+  /* Header padding */
+  header {
+    padding: 0.8rem 1.5rem;
+  }
+
+  /* About section */
+  .section-about-container {
+    gap: 1.5rem; /* slightly tighter spacing */
+  }
+
+  .profile-picture {
+    width: 250px;
+    height: 250px;
+  }
+
+  .about-name {
+    font-size: 2rem;
+  }
+
+  .about-me {
+    font-size: 1.05rem;
+  }
+
+  /* Bubble cat */
+  .bubble-cat {
+    width: 120px; /* smaller cat */
+    top: -90px; /* lift less */
+    right: 20px; /* move left a bit */
+  }
+}
+/***** Mid-desktop / large laptop *****/
+@media (min-width: 1025px) and (max-width: 1440px) {
+  /* Header */
+  header {
+    padding: 1rem 2rem;
+  }
+
+  /* Nav links slightly smaller than huge desktop */
+  nav ul li a {
+    font-size: 1.4rem;
+    padding: 0.7rem 1.2rem;
+  }
+
+  /* About section */
+  .section-about-container {
+    gap: 2rem;
+  }
+
+  .profile-picture {
+    width: 280px; /* slightly smaller */
+    height: 280px;
+  }
+
+  .about-name {
+    font-size: 2.3rem;
+  }
+
+  .about-me {
+    font-size: 1.1rem;
+  }
+
+  /* Bubble cat */
+  .bubble-cat {
+    width: 130px;
+    top: -100px;
+    right: 25px;
+  }
 }

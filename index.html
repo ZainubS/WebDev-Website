@@ -12,12 +12,28 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
 
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("nav-menu");
+      const hamburger = document.querySelector(".hamburger");
+
+      menu.classList.toggle("show");
+
+      if (hamburger.textContent === "☰") {
+        hamburger.textContent = "✕";
+      } else {
+        hamburger.textContent = "☰";
+      }
+    }
+  </script>
+
   <body>
     <header>
       <h1></h1>
       <!-- Navigation Bar -->
       <nav>
-        <ul>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <ul id="nav-menu">
           <li><a href="index.html">About Me</a></li>
           <li><a href="previous-work.html">Previous Work</a></li>
           <li><a href="projects.html">Projects</a></li>

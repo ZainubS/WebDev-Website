@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
+    // On success
     console.log("Form submitted:", { name, email, message });
     response.textContent = "Thank you! Your message has been received.";
     response.style.color = "darkgreen";

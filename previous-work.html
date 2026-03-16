@@ -12,12 +12,28 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
 
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("nav-menu");
+      const hamburger = document.querySelector(".hamburger");
+
+      menu.classList.toggle("show");
+
+      if (hamburger.textContent === "☰") {
+        hamburger.textContent = "✕";
+      } else {
+        hamburger.textContent = "☰";
+      }
+    }
+  </script>
+
   <body>
     <header>
       <h1></h1>
       <!-- Navigation Bar -->
       <nav>
-        <ul>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <ul id="nav-menu">
           <li><a href="index.html">About Me</a></li>
           <li><a href="previous-work.html">Previous Work</a></li>
           <li><a href="projects.html">Projects</a></li>
@@ -36,21 +52,21 @@
             Data Center / DevOps Software Engineer Intern (July 2024 - Present)
           </h3>
           <p>
-            Currently working with server hardware and infrastructure in data
-            centers. Responsibilities include diagnosing and repairing
+            Currently working with server hardware and data center
+            infrastructure. Responsibilities include diagnosing and repairing
             out-of-warranty systems, replacing failed components such as drives
-            and DIMMs, configuring storage depending on RAID requirements, and
+            and DIMMs, configuring storage based on RAID requirements, and
             rebuilding operating systems when necessary. Systems are tested
-            after repair to verify reliability and performance. Also involved in
-            creating and testing automation tools to make this process faster
-            and more efficient.
+            after repair to verify reliability and performance. Additionally
+            involved in developing and testing automation tools to streamline
+            repair and deployment processes.
           </p>
 
           <h3>Math Tutor (Jan 2024 - Mar 2024)</h3>
           <p>
             Provided tutoring support to students in introductory Algebra
-            courses at PCC. Assisted with mathematical concepts and offered
-            students support in completing homework assignments via Zoom.
+            courses at PCC. Explained mathematical concepts and assisted with
+            homework assignments during virtual sessions conducted via Zoom.
           </p>
         </section>
 
@@ -83,6 +99,6 @@
       </div>
     </main>
 
-    <footer class="footer">2026 © • Personal Portfolio</footer>
+    <footer class="footer">2026 © Zainub Siddiqui • Personal Portfolio</footer>
   </body>
 </html>
